@@ -1,16 +1,17 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { OnInit } from '@angular/core';
 import { initFlowbite } from 'flowbite';
-import { Navbar } from './navbar/navbar';
+import { Navbar } from './formularios/navbar/navbar'; // ✅ Ruta corregida
 
 @Component({
-  imports: [RouterOutlet, Navbar],
   selector: 'app-root',
-  styleUrl: './app.css',
+  imports: [RouterOutlet, Navbar],
   templateUrl: './app.html',
+  styleUrl: './app.css'
 })
 export class App implements OnInit {
-  protected readonly title = signal('SegundoPacial_Angular');
+  title = 'web-app';
 
   ngOnInit(): void {
     initFlowbite();
