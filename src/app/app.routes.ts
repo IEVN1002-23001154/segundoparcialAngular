@@ -24,19 +24,27 @@ export const routes: Routes = [
         path: "lista-alumnos",
         loadComponent: () =>
           import("./escuela/lista-alumnos/lista-alumnos").then(
-            (m) => m.ListaAlumnos
+            (c) => c.ListaAlumnos,
+          ),
+      },
+
+      {
+        path: "cinepolis",
+        loadComponent: () =>
+          import("./escuela/cinepolis/cinepolis").then(
+            (c) => c.Cinepolis,
           ),
       },
     ],
   },
-  // ------------------------
-{
+
+  {
     path: "",
     redirectTo: "escuela/lista-alumnos",
     pathMatch: "full",
   },
   {
     path: "**",
-    redirectTo: "escuela/lista-alumnos",
+    redirectTo: "admin",
   },
 ];

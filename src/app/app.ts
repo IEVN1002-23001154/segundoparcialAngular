@@ -2,7 +2,7 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { OnInit } from '@angular/core';
 import { initFlowbite } from 'flowbite';
-import { Navbar } from './formularios/navbar/navbar'; // ✅ Ruta corregida
+import { Navbar } from './formularios/navbar/navbar'; 
 
 @Component({
   selector: 'app-root',

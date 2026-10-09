@@ -20,7 +20,6 @@ export class ListaAlumnos implements OnInit {
   };
 
   ngOnInit(): void {
-    this.cargarAlumno();
     this.formulario = new FormGroup({
       matricula: new FormControl(''),
       nombre: new FormControl(''),
@@ -29,7 +28,10 @@ export class ListaAlumnos implements OnInit {
     });
   }
 
-  cargarAlumno(): void {
-    // Método que llamará el profe más adelante
+  muestraAlumnos(): void {
+    this.nuevoAlumno.matricula = this.formulario.value.matricula;
+    this.nuevoAlumno.nombre = this.formulario.value.nombre;
+    this.nuevoAlumno.correo = this.formulario.value.correo;
+    this.nuevoAlumno.materia = this.formulario.value.materia;
   }
 }
