@@ -1,0 +1,135 @@
+<div
+  class="min-h-screen bg-cover bg-center bg-no-repeat p-6 flex items-center justify-center"
+  style="background-image: url(&quot;imagenes/cinepolis.png&quot;)"
+>
+  <div
+    class="w-full max-w-md p-6 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl border border-gray-200"
+  >
+    <h2 class="text-2xl font-bold text-center text-gray-900 mb-6">Cinépolis</h2>
+
+    <form [formGroup]="formulario" class="space-y-4">
+      <!-- Nombre -->
+      <div>
+        <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900"
+          >Nombre</label
+        >
+        <input
+          type="text"
+          id="nombre"
+          formControlName="nombre"
+          placeholder="Nombre del comprador"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        />
+      </div>
+
+      <!-- Cantidad Compradores -->
+      <div>
+        <label
+          for="compradores"
+          class="block mb-2 text-sm font-medium text-gray-900"
+          >Cantidad Compradores</label
+        >
+        <input
+          type="number"
+          id="compradores"
+          formControlName="compradores"
+          min="1"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        />
+      </div>
+
+      <!-- Tarjeta Cineco -->
+      <div>
+        <label class="block mb-2 text-sm font-medium text-gray-900"
+          >Tarjeta Cineco</label
+        >
+        <div class="flex items-center space-x-6 pt-1">
+          <div class="flex items-center">
+            <input
+              type="radio"
+              id="tarjetaSi"
+              formControlName="tarjetaCineco"
+              value="si"
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500"
+            />
+            <label
+              for="tarjetaSi"
+              class="ms-2 text-sm font-medium text-gray-900"
+              >Sí</label
+            >
+          </div>
+          <div class="flex items-center">
+            <input
+              type="radio"
+              id="tarjetaNo"
+              formControlName="tarjetaCineco"
+              value="no"
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500"
+            />
+            <label
+              for="tarjetaNo"
+              class="ms-2 text-sm font-medium text-gray-900"
+              >No</label
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Cantidad De Boletas -->
+      <div>
+        <label
+          for="boletas"
+          class="block mb-2 text-sm font-medium text-gray-900"
+          >Cantidad de Boletas</label
+        >
+        <input
+          type="number"
+          id="boletas"
+          formControlName="boletas"
+          min="1"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        />
+      </div>
+
+      <!-- Valor a Pagar -->
+      <div class="pt-2">
+        <label class="block mb-2 text-sm font-medium text-gray-900"
+          >Valor a Pagar $</label
+        >
+        <input
+          type="text"
+          [value]="valorPagar"
+          disabled
+          class="bg-gray-100 border border-gray-300 text-gray-900 font-bold text-sm rounded-lg block w-full p-2.5 cursor-not-allowed"
+        />
+      </div>
+
+      <!-- Mensaje de Error -->
+      <div
+        *ngIf="mensajeError"
+        class="p-3 text-sm text-red-800 rounded-lg bg-red-100"
+        role="alert"
+      >
+        {{ mensajeError }}
+      </div>
+
+      <!-- Botones -->
+      <div class="flex justify-center gap-4 pt-4">
+        <button
+          type="submit"
+          (click)="procesar()"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5"
+        >
+          Procesar
+        </button>
+        <button
+          type="button"
+          (click)="verRegistros()"
+          class="text-gray-900 bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5"
+        >
+          Ver Registros
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
