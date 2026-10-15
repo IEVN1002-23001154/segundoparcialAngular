@@ -16,7 +16,6 @@ export const routes: Routes = [
       },
     ],
   },
-  // --- BLOQUE CORREGIDO ---
   {
     path: "escuela",
     children: [
@@ -33,6 +32,14 @@ export const routes: Routes = [
         loadComponent: () =>
           import("./escuela/cinepolis/cinepolis").then(
             (c) => c.Cinepolis,
+          ),
+      },
+      
+      {
+        path: "ver-registros",
+        loadComponent: () =>
+          import("./escuela/ver-registros/ver-registros").then(
+            (c) => c.VerRegistros,
           ),
       },
     ],

@@ -69,7 +69,7 @@ export class Cinepolis implements OnInit {
     arregloVentas.push(nuevaVenta);
     localStorage.setItem('ventasCine', JSON.stringify(arregloVentas));
     
-    // Opcional: limpiar formulario después de procesar
+    // limpiar formulario después de procesar
     this.formulario.reset({
       nombre: '',
       compradores: '',
